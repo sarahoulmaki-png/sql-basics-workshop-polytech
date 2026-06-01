@@ -41,4 +41,15 @@ SELECT
 FROM stream st
 ORDER BY st.id_stream;
 
+--5. Afficher uniquement les streamers qui ont effectivement lancé au moins un stream, avec le titre de leur session : Affiche le pseudo, le titre et l'heure de début.
+
+SELECT DISTINCT
+    s.pseudo,
+    st.titre,
+    st.heure_debut
+FROM streamer s
+INNER JOIN stream st ON s.id_streamer = st.id_streamer
+ORDER BY s.pseudo, st.heure_debut;
+
+
 
